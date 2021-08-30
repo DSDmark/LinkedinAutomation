@@ -1,0 +1,109 @@
+:root{
+    --bg-color:linear-gradient(48deg,rgba(13, 166, 242, 0.381),rgba(146, 18, 192, 0.388));
+  }
+  *{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: capitalize;
+  }
+  
+  /* ============ BASE ========== */
+  body{
+    overflow-x: hidden;
+    line-height: 2rem;
+  }
+  main{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    background:var(--bg-color) ;
+  }
+  a{
+    text-decoration: none;
+    color:white;
+  }
+  ::-webkit-scrollbar{
+    width: 0;
+  }
+  
+  /* ============ CSS CLASSES ============= */
+  .button{
+    padding:1rem 2.5rem;
+    background:var(--bg-color);
+    font-weight: bold;
+    transition: .3s;
+  }
+  .button:hover{
+    background: rgba(54, 22, 84, 0.559);
+  }
+  
+  .todo_title{
+    color:rgba(10, 69, 117, 0.795);
+  }
+  .todo_subtitle{
+    color:rgba(0, 242, 255, 0.857);
+    font-weight: bold;
+  }
+  
+  /* ============= TODO SECTION =========== */
+  .bg_img{
+    position: absolute;
+   background-size: 100% 100%;
+   z-index: -1;
+   filter:blur(10px);
+  }
+  .todo_content{
+    box-shadow:0 0 6rem rgba(56, 36, 10, 0.5);
+    text-align: center;
+    background:var(--bg-color);
+    border-radius: 2rem;
+    padding:calc(5% + 1rem);
+  }
+  .todo_content *{
+    margin-top: 1rem;
+  }
+  .todo_input{
+    position:relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .inputData{
+    border: none;
+    flex:2;
+    border-radius: 2rem;
+    padding:1rem 3rem;
+  }
+  .icons{
+    position: absolute;
+    right: 1rem;
+    cursor: pointer;
+  }
+  .todo_list{
+    border-radius: .8rem;
+    padding:.5rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .todo_subtitle{
+    padding:1rem 0;
+    display: block;
+    flex:1;
+    background: rgba(54, 22, 84, 0.559);
+    border-radius: 2rem;
+  }
+  .list_icons{
+    position: absolute;
+    right: 1rem;
+    cursor: pointer;
+  }
+  .list_icons:last-child{
+    margin-right: 2rem;
+  }
+ 
