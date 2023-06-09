@@ -4,11 +4,14 @@ import imageUpload from "./controllers/imageUpload.js";
 
 const newPost = async () => {
   let URN;
+
   if (!URN) URN = await fetchUserUrn();
-  // createLinkedInPost(URN);
-  let res = await imageUpload(URN);
-  console.log(res)
+
+  let img_Urn = await imageUpload(URN);
+
+  if (URN && img_Urn) createLinkedInPost(URN, img_Urn);
 }
 newPost();
 // setInterval(() => createPost, 1440000);
+
 

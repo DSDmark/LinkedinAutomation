@@ -12,8 +12,8 @@ class LinkedinApisServices {
   imgRegistor(registerUpload) {
     return http.post(this.baseUrl + "assets?action=registerUpload", registerUpload);
   }
-  imgUploader(baseurl) {
-    return http.put(baseurl);
+  imgUploader(baseurl, img) {
+    return http.put(baseurl, img, { headers: { ContentType: "image/jpeg" }, });
   }
 }
 

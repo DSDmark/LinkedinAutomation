@@ -1,4 +1,6 @@
+import path from "path";
 import LinkedinApis from "../services/apisRequest.js"
+import fs from "fs"
 
 const imageUpload = async (userUrn) => {
   try {
@@ -22,10 +24,15 @@ const imageUpload = async (userUrn) => {
 
     const r = await LinkedinApis.imgRegistor(uploadRegister);
     const image_urn = r.data.value.asset.split(":").pop();
-    const res = await LinkedinApis.imgUploader(r.data.value.uploadMechanism["com.linkedin.digitalmedia.uploading.MediaUploadHttpRequest"].uploadUrl, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQWtbvVbR0XEy-OdcpW6iM6hkIxNpodMNGro2Vsg7yNuokAjSJx1BEXFBaZ09_4wzN_x8&usqp=CAU");
 
-    return image_urn, res;
+    const __dirname = path.dirname(new URL(import.meta.url).pathname);
+    const imagePath = path.join(__dirname, "../assets", "images.jpg")
+    const image = fs.readFileSync(imagePath);
 
+    const res = await LinkedinApis.imgUploader(r?.data?.valuimage_urneimage_urn?.uploadMechanism["com.linkedin.digitalmedia.uploading.MediaUploadHttpRequest"]?.uploadUrl, image);
+
+    console.log(res, image_urn)
+    return image_urn
   } catch (error) {
     console.error('Error uploadImg:', error);
   }

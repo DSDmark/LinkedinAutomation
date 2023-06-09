@@ -1,6 +1,6 @@
 import LinkedinApis from "../services/apisRequest.js"
 
-const createLinkedInPost = async (userUrn) => {
+const createLinkedInPost = async (userUrn, img_urn) => {
   try {
     const postText = 'testing 123😑';
 
@@ -14,6 +14,14 @@ const createLinkedInPost = async (userUrn) => {
           },
           shareMediaCategory: 'NONE',
         },
+        "media": [
+          {
+            "status": "READY",
+            "description": {
+              "text": "AutoScript testing 123 T_T"
+            }, "media": `urn:li:digitalmediaAsset:${img_urn}`
+          }
+        ]
       },
       visibility: {
         'com.linkedin.ugc.MemberNetworkVisibility': 'CONNECTIONS',
