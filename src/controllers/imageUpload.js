@@ -28,10 +28,10 @@ const imageUpload = async (userUrn) => {
     const __dirname = path.dirname(new URL(import.meta.url).pathname);
     const imagePath = path.join(__dirname, "../assets", "images.jpg")
     const image = fs.readFileSync(imagePath);
+    const uploadUrl = r?.data.value.uploadMechanism['com.linkedin.digitalmedia.uploading.MediaUploadHttpRequest'].uploadUrl
+    const res = await LinkedinApis.imgUploader(uploadUrl, image);
 
-    const res = await LinkedinApis.imgUploader(r?.data?.valuimage_urneimage_urn?.uploadMechanism["com.linkedin.digitalmedia.uploading.MediaUploadHttpRequest"]?.uploadUrl, image);
-
-    console.log(res, image_urn)
+    console.log(res)
     return image_urn
   } catch (error) {
     console.error('Error uploadImg:', error);

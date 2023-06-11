@@ -13,7 +13,7 @@ class LinkedinApisServices {
     return http.post(this.baseUrl + "assets?action=registerUpload", registerUpload);
   }
   imgUploader(baseurl, img) {
-    return http.put(baseurl, img, { headers: { ContentType: "image/jpeg" }, });
+    return http.put(baseurl, img, { headers: { "Content-Type": "application/octet-stream" } });
   }
 }
 

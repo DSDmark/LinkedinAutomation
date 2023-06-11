@@ -8,7 +8,7 @@ const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
 export default axios.create({
   baseURL: BASE_URL,
   headers: {
-    ContentType: "application/json",
+    "Content-Type": "application/json",
     Authorization: `Bearer ${ACCESS_TOKEN}`
   },
 })

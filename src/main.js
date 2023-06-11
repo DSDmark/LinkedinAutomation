@@ -12,6 +12,5 @@ const newPost = async () => {
   if (URN && img_Urn) createLinkedInPost(URN, img_Urn);
 }
 newPost();
-// setInterval(() => createPost, 1440000);
 
 
