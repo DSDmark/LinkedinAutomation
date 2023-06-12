@@ -1,5 +1,5 @@
 import path from "path";
-import LinkedinApis from "../services/apisRequest.js"
+import LinkedinApis from "../services/linkedinApis.js"
 import fs from "fs"
 
 const imageUpload = async (userUrn) => {
@@ -26,9 +26,12 @@ const imageUpload = async (userUrn) => {
     const image_urn = r.data.value.asset.split(":").pop();
 
     const __dirname = path.dirname(new URL(import.meta.url).pathname);
-    const imagePath = path.join(__dirname, "../assets", "images.jpg")
+
+    const imagePath = path.join(__dirname, "../../assets", "memes-image.png")
     const image = fs.readFileSync(imagePath);
+
     const uploadUrl = r?.data.value.uploadMechanism['com.linkedin.digitalmedia.uploading.MediaUploadHttpRequest'].uploadUrl
+
     const res = await LinkedinApis.imgUploader(uploadUrl, image);
 
     console.log(res)

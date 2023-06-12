@@ -1,4 +1,4 @@
-import LinkedinApis from "../services/apisRequest.js";
+import LinkedinApis from "../services/linkedinApis.js";
 
 // fetching urn 
 const fetchUserUrn = async () => {

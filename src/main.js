@@ -1,16 +1,27 @@
 import fetchUserUrn from "./controllers/fetchUserUrn.js"
 import createLinkedInPost from "./controllers/createPost.js"
 import imageUpload from "./controllers/imageUpload.js";
+import generatMemes from "./controllers/generatMemes.js";
 
-const newPost = async () => {
-  let URN;
+const startUp = async () => {
+  try {
 
-  if (!URN) URN = await fetchUserUrn();
+    let URN;
 
-  let img_Urn = await imageUpload(URN);
+    if (!URN) URN = await fetchUserUrn();
 
-  if (URN && img_Urn) createLinkedInPost(URN, img_Urn);
+    const memesData = await generatMemes();
+
+    let img_Urn = await imageUpload(URN);
+
+    if (URN && img_Urn) createLinkedInPost(URN, img_Urn, memesData);
+
+  } catch (err) {
+
+    console.log(err);
+  }
+
 }
-newPost();
 
+startUp();
 
