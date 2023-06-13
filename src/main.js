@@ -19,9 +19,10 @@ const startUp = async () => {
   } catch (err) {
 
     console.log(err);
+
   }
 
 }
 
-startUp();
-
+// setting interval for every 24 hour to run that script  
+setInterval(() => startUp(), 60 * 1000);

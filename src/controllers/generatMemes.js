@@ -3,9 +3,10 @@ import axios from "axios";
 import fs from "fs"
 
 const generateMemes = async () => {
+  let memesData;
   try {
 
-    const memesData = await MemesApis.getMemes();
+    memesData = await MemesApis.getMemes();
 
     const dir = "./assets"
     const imagePath = `${dir}/memes-image.png`;
@@ -21,6 +22,8 @@ const generateMemes = async () => {
 
     return memesData.data;
   } catch (error) {
+    memesData = await MemesApis.getMemes();
+
     console.error('Error during fetching memes:', error);
   }
 }
