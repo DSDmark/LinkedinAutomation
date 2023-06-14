@@ -14,7 +14,7 @@ const startUp = async () => {
 
     let img_Urn = await imageUpload(URN);
 
-    if (URN && img_Urn) createLinkedInPost(URN, img_Urn, memesData);
+    if (URN) createLinkedInPost(URN, img_Urn, memesData);
 
   } catch (err) {
 
