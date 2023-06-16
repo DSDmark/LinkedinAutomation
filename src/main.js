@@ -14,15 +14,14 @@ const startUp = async () => {
 
     let img_Urn = await imageUpload(URN);
 
-    if (URN) createLinkedInPost(URN, img_Urn, memesData);
+    if (URN && img_Urn) createLinkedInPost(URN, img_Urn, memesData);
 
   } catch (err) {
 
     console.log(err);
 
   }
-
 }
 
 // setting interval for every 24 hour to run that script  
-setInterval(() => startUp(), 60 * 1000);
+setInterval(() => startUp(), 24 * 60 * 1000);

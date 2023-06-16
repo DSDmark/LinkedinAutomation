@@ -1,34 +1,32 @@
-import MemesApis from "../services/memesApis.js"
-import axios from "axios";
-import fs from "fs"
+import MemesApis from "../services/memesApis.js";
+import fs from "fs";
 
 const generateMemes = async () => {
   let memesData;
-  try {
+  const dir = "./assets";
+  const imagePath = `${dir}/memes-image.png`;
 
-    memesData = await MemesApis.getMemes();
-
-    const dir = "./assets"
-    const imagePath = `${dir}/memes-image.png`;
-
-    // cheching if image directory exists
-    if (!fs.existsSync(dir)) {
-      fs.mkdirSync(dir);
-    }
-
-    const res = await MemesApis.downloadImg(memesData.data.url);
-    res.data.pipe(fs.createWriteStream(imagePath));
-    console.log(res)
-
-    return memesData.data;
-  } catch (error) {
-    memesData = await MemesApis.getMemes();
-
-    console.error('Error during fetching memes:', error);
+  // checking if image directory exists
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir);
   }
-}
+
+  while (true) {
+    try {
+      memesData = await MemesApis.getMemes();
+      const res = await MemesApis.downloadImg(memesData.data.url);
+      res.data.pipe(fs.createWriteStream(imagePath));
+      console.log(res);
+      return memesData.data;
+    } catch (error) {
+      console.error("Error during fetching memes:", error);
+      continue; // Retry the loop
+    }
+  }
+};
 
 export default generateMemes;
+
 
 // ================ response data ================
 //  data: {
