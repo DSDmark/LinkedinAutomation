@@ -23,5 +23,4 @@ const startUp = async () => {
   }
 }
 
-// setting interval for every 24 hour to run that script  
-setInterval(() => startUp(), 24 * 60 * 1000);
+startUp()
