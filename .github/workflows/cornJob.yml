@@ -7,12 +7,12 @@ on:
     - cron: "0 */24 * * *"
 
 env:
-  ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-  BASE_URL: ${{ secrets.BASE_URL }}
-  CLIENT_ID: ${{ secrets.CLIENT_ID }}
-  CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
-  MEMES_URL: ${{ secrets.MEMES_URL }}
-  REDIRECT_URI: ${{ secrets.REDIRECT_URI }}
+  ACCESS_TOKEN: ${{ env.ACCESS_TOKEN }}
+  BASE_URL: ${{ env.BASE_URL }}
+  CLIENT_ID: ${{ env.CLIENT_ID }}
+  CLIENT_SECRET: ${{ env.CLIENT_SECRET }}
+  MEMES_URL: ${{ env.MEMES_URL }}
+  REDIRECT_URI: ${{ env.REDIRECT_URI }}
 
 jobs:
   run-script:
