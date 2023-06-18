@@ -1,6 +1,6 @@
 <div align="center">
 
-# LinkedinAutomation for jokes post 💤
+# LinkedinAutomation 💤
 
 ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/DSDmark/LinkedinAutomation)
 ![GitHub](https://img.shields.io/github/license/DSDmark/LinkedinAutomation)
@@ -8,13 +8,13 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/DSDmark/LinkedinAutomation)
 [![Run Node.js Script](https://github.com/DSDmark/AutoScriptJS/actions/workflows/cornJob.yml/badge.svg?branch=master)](https://github.com/DSDmark/AutoScriptJS/actions/workflows/cornJob.yml)
 
-## Apis integration example with Linkedin Api,  GitHub-APIs.
+##  Automate your post using LinkedIn APIs with random memes API from Reddit.
 
 <div align="left">
 
 ## Purpose 😑
 
-> The **SimpleWeb** web app serves as an example of how to Build Vitets App with Includes [**@mui/Material**](mui.com/) and **Redux toolkit** its peer dependencies, which include emotion, the built-in style engine in **MUI v5**. Moreover, it is employed by **RESTful APIs**. It works with the `Docker` platform.
+> LinkedIn APIs were used to automate your post, which was then combined with a JSON API for a random meme pulled from Reddit, which is maintained by @D3vd and set up using GitHub action.
 
 </div>
 
