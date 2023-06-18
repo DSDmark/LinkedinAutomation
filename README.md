@@ -1,6 +1,6 @@
 <div align="center">
 
-# LinkedinAutomation 💤
+# LinkedinAutomation for jokes post 💤
 
 ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/DSDmark/LinkedinAutomation)
 ![GitHub](https://img.shields.io/github/license/DSDmark/LinkedinAutomation)
@@ -8,7 +8,7 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/DSDmark/LinkedinAutomation)
 [![Run Node.js Script](https://github.com/DSDmark/AutoScriptJS/actions/workflows/cornJob.yml/badge.svg?branch=master)](https://github.com/DSDmark/AutoScriptJS/actions/workflows/cornJob.yml)
 
-## Apis integration example with Vitets, Redux toolkit, Material-ui 🚀 with GitHub-APIs.
+## Apis integration example with Linkedin Api,  GitHub-APIs.
 
 <div align="left">
 
@@ -23,6 +23,15 @@
 ### How to install 😒
 
 You can utilise that software in two different ways.
+
+```
+BASE_URL=https://api.linkedin.com/v2
+MEMES_URL=https://meme-api.com/gimme
+CLIENT_ID=
+CLIENT_SECRET=
+REDIRECT_URI=
+ACCESS_TOKEN=
+```
 
 - Using **Nodejs**. 
 - Using **Docker**. 
