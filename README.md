@@ -105,9 +105,9 @@ env:
 
 like this:
 
-Now your script is good to go.
-
 ![image](https://github.com/DSDmark/LinkedinAutomation/assets/85744816/ce0118ba-54a9-4355-aa23-201bc221d78a)
+
+Now your script is good to go.
 
 Once you are done you can close 🔒 the application in your terminal to quit the application.
 
