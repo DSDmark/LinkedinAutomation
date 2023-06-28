@@ -14,7 +14,9 @@
 
 ## Purpose 😑
 
-> LinkedIn APIs were used to automate your post, which was then combined with a JSON API for a random meme pulled from Reddit, which is maintained by @D3vd and set up using GitHub action.
+> Linkedin APIs were used to automate your post, which was then combined with a JSON API for a random meme pulled from Reddit, which is maintained by @D3vd and set up using GitHub action.
+
+📓 you can also write that script in **bash** or **python** which is well suited for that type of work.
 
 </div>
 
@@ -22,8 +24,15 @@
 
 ### How to install 😒
 
-You can utilise that software in two different ways.
+You can utilise that script by Using **Nodejs**. 
 
+#### Frist, here is by using **Nodejs**.
+
+1. Click on the green **Clone or download** button and choose Download ZIP.
+2. Find the downloaded zipped file on your pc and **extract it**.
+3. Install `nodejs` and `NPM` in your local system.
+4. Open the Root Directory, navigate to LinkedinAutomation using the command `cd LinkedinAutomation` and use either `npm install` or `pnpm install` to install all dependencies.
+5. After that configure these values in the `.env` file:
 ```
 BASE_URL=https://api.linkedin.com/v2
 MEMES_URL=https://meme-api.com/gimme
@@ -32,26 +41,73 @@ CLIENT_SECRET=
 REDIRECT_URI=
 ACCESS_TOKEN=
 ```
+6. Then run `npm start` or `pnpm start`. Now you can see this output:
+```sh
+LinkedIn post created successfully: { id: 'urn:li:share:7078778985983164433' }
+```
+which is show your post is create sucessfully.
 
-- Using **Nodejs**. 
-- Using **Docker**. 
+#### How to automate using **github-actions**.
 
-#### Frist, here is by using **Nodejs**.
+You can always set that script in you local system by using **corn job** to upload post in linkedin or you can use **github-action** for this work.
 
-1. Click on the green **Clone or download** button and choose Download ZIP.
-2. Find the downloaded zipped file on your pc and **extract it**.
-3. Install `nodejs` and `NPM` in your local system.
-4. Open the Root Directory, navigate to SimpleCURD using the command `cd SimpleCURD` and use either `npm install` or `pnpm install` to install all dependencies in the frontend and backend directories.
-It used `concurrently:7.6.0` in this project. So, you may use the `npm start` command in the root folder, once you have installed all dependencies in each folder containing a `package.json` file. 
+here is to set github action to run that script with fixed interval of time.
 
-#### Second, here is by using **Docker**.
+1. Go to you action tab and create action and paste that code:
+```yml
+name: Run Node.js Script
 
-1. Click on the green **Clone or download** button and choose Download ZIP.
-2. Find the downloaded zipped file on your pc and **extract it**.
-3. Then install `Docker` in your local system.
-4. Run that command.
-`docker-compose up -d`.
-5. You can now open the **frontend** at `localhost:3000` and the **backend** at `localhost:4000` in your browser.
+on:
+  push:
+   branches: master
+  schedule:
+    - cron: "0 */24 * * *"      
+
+env:
+  ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+  BASE_URL: ${{ secrets.BASE_URL }}
+  CLIENT_ID: ${{ secrets.CLIENT_ID }}
+  CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+  MEMES_URL: ${{ secrets.MEMES_URL }}
+  REDIRECT_URI: ${{ secrets.REDIRECT_URI }}
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run script
+        run: node src/main.js
+```
+
+2. you can set interval which you want to upload your post on linkedin by seting  `cron: "0 */24 * * *"` in above action.
+3. Go to your repo setting and open that section and set these envroments:
+```yml
+env:
+  ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+  BASE_URL: ${{ secrets.BASE_URL }}
+  CLIENT_ID: ${{ secrets.CLIENT_ID }}
+  CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+  MEMES_URL: ${{ secrets.MEMES_URL }}
+  REDIRECT_URI: ${{ secrets.REDIRECT_URI }}
+```
+
+like this:
+
+![image](https://github.com/DSDmark/LinkedinAutomation/assets/85744816/ce0118ba-54a9-4355-aa23-201bc221d78a)
+
+Now your script is good to go.
 
 Once you are done you can close 🔒 the application in your terminal to quit the application.
 
@@ -71,13 +127,13 @@ Once you are done you can close 🔒 the application in your terminal to quit th
 
 ## Try Out LinkedinAutomation Demo 🚀
 
-<a href="https://LinkedinAutomation" alt="SimpleWeb">LinkedinAutomation</a>
+<a href="https://LinkedinAutomation" alt="LinkedinAutomation">LinkedinAutomation</a>
 
 </div>
 
 ### LinkedinAutomation
 
-![SimpleWeb perview](./assets/perview.gif "LinkedinAutomation")
+![LinkedinAutomation perview](./assets/perview.gif "LinkedinAutomation")
 
 > If you have any issues with that Application feel free to let me know 🙃!
 
