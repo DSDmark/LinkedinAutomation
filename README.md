@@ -26,13 +26,13 @@
 
 You can utilise that script by Using **Nodejs**. 
 
-#### Frist, here is by using **Nodejs**.
+#### here is by using **Nodejs**.
 
-1. Click on the green **Clone or download** button and choose Download ZIP.
+1. Click on the green **Clone** button or choose Download ZIP.
 2. Find the downloaded zipped file on your pc and **extract it**.
 3. Install `nodejs` and `NPM` in your local system.
 4. Open the Root Directory, navigate to LinkedinAutomation using the command `cd LinkedinAutomation` and use either `npm install` or `pnpm install` to install all dependencies.
-5. After that configure these values in the `.env` file:
+5. After that, configure these values in the `.env` file:
 ```
 BASE_URL=https://api.linkedin.com/v2
 MEMES_URL=https://meme-api.com/gimme
@@ -45,15 +45,16 @@ ACCESS_TOKEN=
 ```sh
 LinkedIn post created successfully: { id: 'urn:li:share:7078778985983164433' }
 ```
-which is show your post is create sucessfully.
+which is show your post is created successfully.
 
 #### How to automate using **github-actions**.
 
-You can always set that script in you local system by using **corn job** to upload post in linkedin or you can use **github-action** for this work.
+You can always set that script in your local system by using **corn job** to upload posts on LinkedIn or you can use **github-action** for this work.
 
-here is to set github action to run that script with fixed interval of time.
+here is to set GitHub action to run that script with a fixed interval of time.
 
-1. Go to you action tab and create action and paste that code:
+1. Go to your action tab and create action and paste that code:
+
 ```yml
 name: Run Node.js Script
 
