@@ -114,29 +114,19 @@ Now your script is good to go.
 
 ---
 
-<div align="left">
-
 ### Here you can quickly start with that repo 👼
-
-</div>
 
 [![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/DSDmark/LinkedinAutomation/tree/master)
 
-<div align="left">
+---
 
-## Try Out LinkedinAutomation Demo 🚀
-
-<a href="https://LinkedinAutomation" alt="LinkedinAutomation">LinkedinAutomation</a>
-
-</div>
-
-### LinkedinAutomation
+### LinkedinAutomation preview 👀
 
 ![LinkedinAutomation perview](./assets/perview.gif "LinkedinAutomation")
 
 > If you have any issues with that Application feel free to let me know 🙃!
 
-> If you are more interested, check out 🥺 the collection of [ **DSDmark**](https://github.com/DSDmark"DSDmark").
+> If you are more interested. check out 🥺 the collection of [ **DSDmark**](https://github.com/DSDmark?tab=repositories)
 
 ---
 
